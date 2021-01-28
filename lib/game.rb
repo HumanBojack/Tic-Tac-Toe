@@ -15,7 +15,8 @@ class Game
 	def play(player, position)
 		loop do
 			if @board[position] == " "
-				@board[position] = player.color
+				@board[position] = "X".colorize(:blue) if player.color == "X"
+				@board[position] = "O".colorize(:red) if player.color == "O"
 				break
 			else
 				puts "Erreur, indiquez une autre case"

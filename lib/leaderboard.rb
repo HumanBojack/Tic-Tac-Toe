@@ -4,8 +4,6 @@ class LeaderBoard
 	def initialize
 		@scores = File.read("leaderboard.json")
 		@scores = eval(@scores)
-		puts @scores.class
-		puts @scores
 	end
 
 	def add(player_name)
@@ -24,7 +22,6 @@ class LeaderBoard
 	end
 
 	def save
-		puts @scores
 		File.write("leaderboard.json", JSON.pretty_generate(@scores))
 	end
 end
